@@ -12,7 +12,6 @@ public class SocketServidor extends javax.swing.JFrame {
     
     Thread thread;
     ThreadServidor threadServidor;
-    static String clienteIP;
 
     public ThreadServidor getThreadServidor() {
         return threadServidor;
@@ -161,8 +160,6 @@ public class SocketServidor extends javax.swing.JFrame {
         threadServidor = new ThreadServidor();
         thread = new Thread(threadServidor);
         thread.start();
-        
-        clienteIP = getThreadServidor().getClienteIP();
     }//GEN-LAST:event_btOkActionPerformed
 
     private void btEncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEncerrarActionPerformed

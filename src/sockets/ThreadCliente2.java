@@ -31,7 +31,7 @@ public class ThreadCliente2 implements Runnable {
     
     public void Conectar() throws IOException {
         porta = (Integer.parseInt(SocketServidor.tfPorta.getText()));
-        cliente2 = new Socket(SocketServidor.clienteIP, (porta+1));
+        cliente2 = new Socket(ThreadServidor.clienteIp, (porta+1));
         SocketServidor.textArea.append("\nConectado ao servidor!");
         SocketServidor.textArea.append("\n************************************************************");
     }

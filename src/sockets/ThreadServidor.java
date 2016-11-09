@@ -18,13 +18,10 @@ public class ThreadServidor implements Runnable {
     int porta;
     ThreadCliente2 threadCliente;
     Thread thread;
+    static String clienteIp;
     
     public ThreadCliente2 getThreadCliente(){
         return threadCliente;
-    }
-    
-    public String getClienteIP(){
-        return cliente.getInetAddress().getHostAddress();
     }
     
     @Override
@@ -48,7 +45,8 @@ public class ThreadServidor implements Runnable {
         servidor = new ServerSocket(porta);
         SocketServidor.textArea.append("Porta " + porta + " aberta!");
         cliente = servidor.accept();
-        SocketServidor.textArea.append("\nConexão estabelecida com o cliente " + cliente.getInetAddress().getHostAddress());
+        clienteIp = cliente.getInetAddress().getHostAddress();
+        SocketServidor.textArea.append("\nConexão estabelecida com o cliente " + clienteIp);
         
         threadCliente = new ThreadCliente2();
         thread = new Thread(threadCliente);
