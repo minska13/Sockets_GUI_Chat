@@ -198,7 +198,9 @@ public class SocketCliente extends javax.swing.JFrame {
     private void btEncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEncerrarActionPerformed
         try {
             tfPorta.setText("");
+            tfPorta.setEditable(true);
             tfIp.setText("");
+            tfIp.setEditable(true);
             btEnviar.setEnabled(false);
             btEncerrar.setEnabled(false);
             textArea.setText("");
